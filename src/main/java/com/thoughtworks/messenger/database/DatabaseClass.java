@@ -14,11 +14,14 @@ public class DatabaseClass {
 	 */
 	
 	private static Map<Long, Message> messages = new HashMap<>();
-	private static Map<Long, Profile> profiles = new HashMap<>();
+	
+	//profileName which is a String is the key for the Profile Map 
+	private static Map<String, Profile> profiles = new HashMap<>();
+	
 	public static Map<Long, Message> getMessages() {
 		return messages;
 	}
-	public static Map<Long, Profile> getProfiles() {
+	public static Map<String, Profile> getProfiles() {
 		return profiles;
 	}
 	

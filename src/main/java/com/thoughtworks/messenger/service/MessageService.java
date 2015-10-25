@@ -14,7 +14,7 @@ public class MessageService {
 	public MessageService() {
 		messages.put(1L, new Message(1L, "Technical Architect", "Gagan Bhatnagar"));
 		messages.put(2L, new Message(2, "Sr Apps Developer", "Rajat Bhatnagar"));
-		System.out.println("*********** Creating the map with size " + messages.size() +" *********************");
+		//System.out.println("*********** Creating the map with size " + messages.size() +" *********************");
 	}
 
 	public List<Message> getAllMessages(){
