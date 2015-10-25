@@ -17,6 +17,13 @@ import com.thoughtworks.messenger.service.MessageService;
 
 @Path("/messages")
 public class MessageResource {
+	/*
+	 **************  URL for rest service ********************
+	 *  http://localhost:8080/demystify-rest/webapi/messages
+	 *  http://localhost:8080/demystify-rest/webapi/messages/1
+	 *  ******************************************************
+	 */
+	
 	
 	MessageService messageService = new MessageService();
 	
@@ -56,5 +63,10 @@ public class MessageResource {
 	   messageService.removeMessage(id);
 	}
 	
+	//This is how we delegate to a sub-resource . Comments come under messages
+	@Path("/{messageId}/comments")
+	public CommentResource getComments(){
+		return new CommentResource();
+	}
 
 }

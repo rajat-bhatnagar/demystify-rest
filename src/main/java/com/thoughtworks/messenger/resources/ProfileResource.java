@@ -20,6 +20,13 @@ import com.thoughtworks.messenger.service.ProfileService;
 @Produces(MediaType.APPLICATION_JSON)
 public class ProfileResource {
 	
+	/*
+	 **************  URL for rest service *****************************
+	 *  http://localhost:8080/demystify-rest/webapi/profiles
+	 *  http://localhost:8080/demystify-rest/webapi/profiles/profileOne
+	 *  ***************************************************************
+	 */
+	
 	ProfileService profileService = new ProfileService();
 	
 	public ProfileResource() {
