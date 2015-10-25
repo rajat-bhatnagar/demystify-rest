@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.thoughtworks.messenger.database.DatabaseClass;
+import com.thoughtworks.messenger.exception.DataNotFoundException;
 import com.thoughtworks.messenger.model.Message;
 
 public class MessageService {
@@ -23,8 +24,14 @@ public class MessageService {
 		return list;
 	}
 	
+	//Enhancing this method to throw a custom DataNotFoundException if nothing is found
 	public Message getMessage(long id){
-		return messages.get(id);
+		Message message = messages.get(id);
+		//If a message is not found, throw a runtime exception
+		if(message == null){
+			throw new DataNotFoundException("Message with id :: "+id+ " not found");
+		}
+		return message;
 	}
 	
 	public Message addMessage(Message message){
